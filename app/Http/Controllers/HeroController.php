@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Hero;
+use App\Repositories\Heroes;
 use Illuminate\Http\Request;
 
 class HeroController extends Controller
 {
-    public function index()
+    public function index(Heroes $heroes)
     {
-        return view('hero.index');
+        $heroes = $heroes->all();
+
+        return view('hero.index', compact('heroes'));
     }
 
-    public function details()
+    public function details(Hero $hero)
     {
-        return view('hero.index');
+        return view('hero.details', compact('hero'));
     }
 }

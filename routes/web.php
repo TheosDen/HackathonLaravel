@@ -12,5 +12,6 @@
 */
 
 
-Route::get('/', 'HeroController@details');
+Route::get('/', 'HeroController@index');
+Route::get('heroes', 'HeroController@index');
 Route::get('/heroes/{hero}', 'HeroController@details');
