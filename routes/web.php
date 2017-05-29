@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+
+Route::get('/', 'HeroController@details');
+Route::get('/heroes/{hero}', 'HeroController@details');
